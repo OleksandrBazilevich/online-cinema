@@ -1,0 +1,9 @@
+@import './../../../assets/styles/variables';
+
+.sidebar {
+  @apply py-4 px-layout;
+
+  @include mediaQuery(laptop) {
+    @apply px-3;
+  }
+}

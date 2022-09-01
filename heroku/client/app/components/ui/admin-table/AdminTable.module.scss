@@ -1,0 +1,43 @@
+@import '../../../assets/styles/variables';
+.item {
+  @apply flex-center-between bg-gray-700 bg-opacity-20 mt-4 px-5 rounded-lg transition-colors hover:bg-opacity-50;
+
+  @include mediaQuery(laptop) {
+    @apply text-xs;
+  }
+
+  @include mediaQuery(tablet) {
+    @apply px-2;
+    font-size: 10px;
+  }
+
+  > div {
+    @apply text-white text-center text-opacity-80 py-3;
+    width: 17%;
+
+    &:first-child {
+      @include mediaQuery(tablet) {
+        @apply truncate;
+        width: 24%;
+      }
+    }
+
+    &:last-child {
+      @apply text-right justify-end;
+      @include mediaQuery(tablet) {
+        width: 13%;
+      }
+    }
+  }
+}
+.itemHeader {
+  @apply bg-primary bg-opacity-20 shadow-lg mt-8 hover:bg-opacity-50;
+
+  > div {
+    @apply text-opacity-90 font-semibold py-2.5;
+  }
+}
+
+.notFound {
+  @apply text-lg text-white text-opacity-60 text-center py-3;
+}

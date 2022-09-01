@@ -1,0 +1,19 @@
+@import '../../../assets/styles/variables';
+
+.form {
+  @apply mt-12;
+
+  .fields {
+    @apply flex-center-between	flex-wrap;
+
+    > div {
+      width: 48%;
+      @include mediaQuery(mobileS) {
+        @apply w-full;
+      }
+    }
+  }
+  > button {
+    @apply mt-10;
+  }
+}

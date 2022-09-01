@@ -1,0 +1,62 @@
+@import '../../../assets/styles/variables';
+
+.slider {
+  @apply relative mx-auto;
+  max-width: 1200px;
+
+  .slide {
+    @apply relative  rounded-3xl overflow-hidden shadow-xl flex items-end h-auto;
+    // @include mediaQuery(tablet) {
+    //   @apply h-60;
+    // }
+    // @include mediaQuery(mobileL) {
+    //   @apply h-40;
+    // }
+
+    @include fade-bg-gradient();
+
+    .image {
+      @apply image-like-bg;
+    }
+
+    .content {
+      @apply relative z-2 p-8;
+
+      .heading {
+        @apply text-white uppercase text-5xl font-semibold mb-1 text-shadow truncate max-w-xs;
+        @include mediaQuery(laptop) {
+          @apply text-2xl;
+        }
+
+        @include mediaQuery(tablet) {
+          @apply text-xl;
+          max-width: 250px;
+        }
+        @include mediaQuery(mobileL) {
+          @apply text-base;
+        }
+      }
+
+      .subHeading {
+        @apply text-gray-300 font-medium uppercase mb-4 text-shadow;
+
+        @include mediaQuery(tablet) {
+          @apply text-xs;
+        }
+        @include mediaQuery(mobileL) {
+          font-size: 11px;
+        }
+      }
+
+      .button {
+        @apply btn-primary p-2 px-10;
+        @include mediaQuery(tablet) {
+          @apply text-xs;
+        }
+        @include mediaQuery(mobileL) {
+          @apply px-6;
+        }
+      }
+    }
+  }
+}
