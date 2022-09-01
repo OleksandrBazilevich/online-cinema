@@ -1,8 +1,0 @@
-@import '../../../../assets/styles/variables';
-
-.description {
-  @apply text-lg font-light text-white text-opacity-60;
-  @include mediaQuery(tablet) {
-    @apply text-base;
-  }
-}
