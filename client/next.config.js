@@ -13,11 +13,11 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://192.168.1.4:4200/api/:path*',
+        destination: 'https://online-cinema-69.herokuapp.com/api/:path*',
       },
       {
         source: '/uploads/:path*',
-        destination: 'http://192.168.1.4:4200/uploads/:path*',
+        destination: 'https://online-cinema-69.herokuapp.com//uploads/:path*',
       },
     ]
   },
