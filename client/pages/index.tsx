@@ -29,6 +29,8 @@ export const getStaticProps: GetStaticProps = async () => {
         title: movie.title,
       }))
 
+    console.log(movies)
+
     const { data: actorsData } = await ActorService.getAll()
     const actors: IGalleryItem[] = actorsData.slice(0, 7).map((actor) => ({
       name: actor.name,
