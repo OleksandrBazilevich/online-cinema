@@ -17,7 +17,7 @@ const nextConfig = {
       },
       {
         source: '/uploads/:path*',
-        destination: 'https://online-cinema-69.herokuapp.com//uploads/:path*',
+        destination: 'https://online-cinema-69.herokuapp.com/uploads/:path*',
       },
     ]
   },
