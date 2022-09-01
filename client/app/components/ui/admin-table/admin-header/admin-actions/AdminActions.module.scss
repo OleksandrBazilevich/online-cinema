@@ -1,0 +1,17 @@
+@import '../../../../../assets/styles/variables';
+
+.action {
+  @apply flex items-center;
+
+  > button {
+    @apply outline-border-none bg-transparent text-lg text-primary opacity-80 transition-opacity hover:opacity-100;
+
+    &:first-child {
+      @apply mr-4;
+
+      @include mediaQuery(tablet) {
+        @apply mr-1;
+      }
+    }
+  }
+}

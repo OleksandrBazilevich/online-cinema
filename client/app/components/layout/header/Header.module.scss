@@ -1,0 +1,63 @@
+@import '../../../assets/styles/variables';
+
+.header {
+  @apply hidden sticky top-0 left-0 z-3 air-block  px-10 py-4 rounded-t-none;
+  @include mediaQuery(tablet) {
+    @apply flex-center-between;
+  }
+
+  @include mediaQuery(mobileL) {
+    @apply pl-3 pr-7;
+  }
+
+  .logo {
+    @apply w-2/5;
+  }
+
+  .menu {
+    @apply absolute;
+    > span {
+      @apply w-7 bg-white top-1/2 left-1/2 block absolute transition-transform;
+      height: 3px;
+      transform: translate(-50%, -50%);
+      &:first-child {
+        top: calc(50% - 8px);
+      }
+
+      &:last-child {
+        top: calc(50% + 8px);
+      }
+    }
+
+    &.active {
+      > span {
+        display: none;
+        &:first-child {
+          display: block;
+          top: 50%;
+          transform: translate(-50%, 0%) rotate(45deg);
+        }
+        &:last-child {
+          display: block;
+          top: 50%;
+          transform: translate(-50%, 0%) rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.side_menu {
+  @apply absolute rounded-r-none air-block transition-transform w-80 max-h-screen  pt-2 pb-6;
+  margin-left: -17rem;
+  transform: translate(150%);
+  top: 20px;
+
+  @include mediaQuery(mobileS) {
+    @apply w-60 -ml-52;
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+}

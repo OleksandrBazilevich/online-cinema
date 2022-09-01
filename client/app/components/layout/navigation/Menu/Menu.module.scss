@@ -1,0 +1,47 @@
+@import '../../../../assets/styles/variables';
+
+.menu {
+  @apply mt-10 first:mt-8 animate-fade;
+
+  @include mediaQuery(tablet) {
+    @apply mt-6 first:mt-6;
+  }
+
+  .heading {
+    @apply text-gray-500 uppercase text-xs font-semibold pl-7;
+  }
+
+  .ul {
+    > li {
+      @apply mx-2 border-r-8 border-r-transparent transition-colors;
+
+      > a,
+      button {
+        @apply flex items-center text-gray-500  mt-5 cursor-pointer ml-3;
+
+        > span {
+          @apply ml-3 text-sm hover:text-white;
+        }
+
+        > svg {
+          @apply text-2lg;
+        }
+
+        > span,
+        > svg {
+          @apply transition-colors;
+        }
+      }
+      &.active {
+        @apply border-r-primary;
+
+        > a > span {
+          @apply text-white;
+        }
+        > a > svg {
+          @apply fill-primary;
+        }
+      }
+    }
+  }
+}

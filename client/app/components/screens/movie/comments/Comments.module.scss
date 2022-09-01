@@ -1,0 +1,102 @@
+@import '../../../../assets/styles/variables';
+
+.comment {
+  @apply flex  text-white air-block px-5 py-3 relative mb-6;
+
+  .icons {
+    @apply flex absolute top-3 right-5;
+    button {
+      @apply mr-2 last:mr-0;
+    }
+    > button > svg {
+      @apply transition-colors hover:fill-primary cursor-pointer;
+    }
+  }
+  .spoiler {
+    @apply flex-center-between w-full px-2 py-4;
+
+    > span {
+      @apply text-lg;
+    }
+  }
+  .content {
+    @apply w-11/12 mb-3;
+    @include mediaQuery(tablet) {
+      @apply text-sm;
+    }
+  }
+  .form {
+    @apply w-full;
+
+    .buttons {
+      @apply flex justify-between;
+
+      button {
+        @include mediaQuery(mobileM) {
+          @apply text-xs px-5;
+        }
+      }
+    }
+  }
+  .img {
+    @apply w-12	 h-12 bg-white rounded-full relative mr-3 mb-2;
+    min-width: 48px;
+    @include mediaQuery(tablet) {
+      @apply w-9 h-9;
+      min-width: 36px;
+    }
+  }
+
+  .header {
+    @apply mb-1  font-semibold;
+    @include mediaQuery(tablet) {
+      @apply text-xs;
+    }
+
+    .name {
+      @apply mr-3;
+    }
+
+    .date {
+      @apply text-sm text-gray-500;
+      @include mediaQuery(tablet) {
+        @apply text-xs;
+      }
+    }
+  }
+}
+
+.add_form {
+  @apply air-block w-full pt-2 pb-5 mb-10;
+  .actions {
+    @apply flex justify-between items-center;
+
+    > button {
+      @include mediaQuery(tablet) {
+        @apply text-sm;
+      }
+      @include mediaQuery(mobileS) {
+        @apply text-xs px-6;
+      }
+    }
+  }
+
+  div {
+    @apply w-11/12 mx-auto mt-5;
+  }
+  .checkbox {
+    @apply text-lg text-gray-600 flex items-center  justify-center;
+    input[type='checkbox'] {
+      @apply w-6 h-6 rounded bg-gray-700 outline-none border-none  cursor-pointer mr-3;
+    }
+
+    > span {
+      @include mediaQuery(tablet) {
+        @apply text-base;
+      }
+    }
+    input[type='checkbox']:checked {
+      @apply bg-primary;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../../../assets/styles/variables';
+
+.header {
+  @apply flex-center-between mt-8;
+
+  @include mediaQuery(laptop) {
+    > div {
+      @apply w-6/12;
+      @include mediaQuery(mobileS) {
+        @apply w-full;
+      }
+    }
+  }
+
+  @include mediaQuery(tablet) {
+    @apply flex-wrap;
+
+    > div {
+      @apply mb-6;
+    }
+  }
+
+  > button {
+    @apply bg-primary bg-opacity-80;
+
+    @include mediaQuery(laptop) {
+      @apply text-sm;
+    }
+  }
+}
