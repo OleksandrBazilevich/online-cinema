@@ -38,6 +38,7 @@ export const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
 
   return (
     <button
+      aria-label='make it favorite'
       onClick={() => mutateAsync()}
       className={cn(styles.button, {
         [styles.animate]: isSmashed,

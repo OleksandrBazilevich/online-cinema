@@ -77,6 +77,7 @@ export const CommentsItem: FC<ICommentItem> = ({
                   <Image
                     src={data.user?.avatar || avatar}
                     layout="fill"
+                    alt="avatar"
                     priority
                     draggable={false}
                   />
@@ -122,10 +123,11 @@ export const CommentsItem: FC<ICommentItem> = ({
                     user?._id === data.user._id || user.isAdmin ? (
                       showForm ? null : (
                         <>
-                          <button onClick={() => setShowForm(true)}>
+                          <button aria-label='edit comment' onClick={() => setShowForm(true)}>
                             <MaterialIcon name="MdEdit" />
                           </button>
                           <button
+                            aria-label='edit comment'
                             onClick={() => deleteComment(data._id)}
                             disabled={isLoading}
                           >
