@@ -50,11 +50,7 @@ input:focus {
   }
 }
 
-.redux-toastr {
-  @include mediaQuery(tablet) {
-    @apply hidden;
-  }
-}
+
 
 .slide-animation-enter {
   opacity: 0;

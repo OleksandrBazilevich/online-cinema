@@ -12,12 +12,12 @@ export const SideMenu: FC<{ isShow: boolean }> = ({ isShow }) => {
         [styles.active]: isShow,
       })}
     >
-      <ul>
+      <div>
         <div className="px-5">
           <Search />
         </div>
         <MenuContainer />
-      </ul>
+      </div>
     </div>
   )
 }
