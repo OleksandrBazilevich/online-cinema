@@ -45,6 +45,9 @@
       @apply w-9 h-9;
       min-width: 36px;
     }
+    >span > img{
+      @apply rounded-full
+    }
   }
 
   .header {
