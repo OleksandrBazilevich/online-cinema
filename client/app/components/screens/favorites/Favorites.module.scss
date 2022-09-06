@@ -39,6 +39,12 @@
       @apply image-like-bg;
     }
 
+    width: 25%;
+
+    @include mediaQuery(tablet) {
+      width: 100%;
+    }
+
     .title {
       @apply relative z-3 text-center m-4 w-full font-semibold text-white text-shadow;
     }
