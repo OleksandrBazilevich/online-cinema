@@ -20,7 +20,12 @@
 
 .itemWrapper {
   @apply relative mb-8 h-44 mr-8 animate-fade transition-transform hover:-translate-y-3;
-  width: 31%;
+
+  width: 25%;
+
+  @include mediaQuery(tablet) {
+      width: 100%;
+    }
 
   &:nth-child(3n) {
     @apply mr-0;
@@ -37,12 +42,6 @@
 
     img {
       @apply image-like-bg;
-    }
-
-    width: 25%;
-
-    @include mediaQuery(tablet) {
-      width: 100%;
     }
 
     .title {
