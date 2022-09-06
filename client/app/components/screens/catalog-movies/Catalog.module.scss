@@ -3,7 +3,7 @@
 }
 
 .movies {
-  @apply flex flex-wrap mt-8  items-center;
+  @apply flex-center-between flex-wrap mt-8 ;
 
   > a {
     @apply mr-8 animate-fade;
