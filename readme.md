@@ -1,3 +1,13 @@
+## About the project
+
+A Full-stack web-application for wathing movies with SEO optimization, build using [**Next.js**](https://nextjs.org/)  &  [**Nest.js**](https://nestjs.com/)
+
+## Demo
+
+Doesnt exist yet
+
+## Features
+
 - JWT Auththorization
 - SSG & ISR
 - Reusable components
