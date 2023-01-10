@@ -1,10 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { ModelType } from '@typegoose/typegoose/lib/types'
-import dayjs from 'dayjs'
 import { Types } from 'mongoose'
 import { InjectModel } from 'nestjs-typegoose'
-import { TelegramService } from 'src/telegram/telegram.service'
-import { ViewsService } from 'src/views/views.service'
 import { CreateMovieDto } from './dto/create-movie.dto'
 import { MovieModel, Views } from './movie.model'
 
@@ -12,7 +9,6 @@ import { MovieModel, Views } from './movie.model'
 export class MovieService {
   constructor(
     @InjectModel(MovieModel) private readonly MovieModel: ModelType<MovieModel>,
-    private readonly telegramService: TelegramService,
   ) {}
 
   async getById(_id: string) {
@@ -23,11 +19,6 @@ export class MovieService {
   }
 
   async update(_id: string, dto: CreateMovieDto) {
-    if (!dto.isSendTelegram) {
-      await this.sendNotification(dto)
-      dto.isSendTelegram = true
-    }
-
     const updateMovie = await this.MovieModel.findByIdAndUpdate(_id, dto, {
       new: true,
     }).exec()
@@ -148,29 +139,5 @@ export class MovieService {
       .sort({ countViews: -1 })
       .populate('genres')
       .exec()
-  }
-
-  async sendNotification(dto: CreateMovieDto) {
-    // if (process.env.NODE_ENV != 'development')
-    // await this.telegramService.sendPhoto(dto.poster)
-
-    await this.telegramService.sendPhoto(
-      'https://fanart.tv/fanart/movies/245891/movieposter/john-wick-5cdaceaf4e0a7.jpg',
-    )
-
-    const message = `<b>${dto.title}</b>`
-
-    await this.telegramService.sendMessage(message, {
-      reply_markup: {
-        inline_keyboard: [
-          [
-            {
-              url: 'https://okko.tv/movie/free-guy',
-              text: 'go to watch',
-            },
-          ],
-        ],
-      },
-    })
   }
 }

@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react'
+import { FC } from 'react'
 
 import { Button } from '../../form-elements/Button'
 

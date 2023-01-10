@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 
 import { usePopularMovies } from '@/components/layout/sidebar/movies-container/popular-movies/usePopularMovies'
 import { useAuth } from '@/hooks/useAuth'
-import { MovieService } from '@/services/movie.service'
 import { ViewsService } from '@/services/views.service'
 
 export const useUpdateCountOpened = (movieId: string) => {

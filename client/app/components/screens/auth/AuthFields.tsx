@@ -1,18 +1,8 @@
 import { FC } from 'react'
-import {
-  DeepRequired,
-  FieldError,
-  FieldErrorsImpl,
-  FieldValues,
-  FormState,
-  UseFormGetFieldState,
-  UseFormRegister,
-  UseFormStateProps,
-} from 'react-hook-form'
+import { FormState, UseFormRegister } from 'react-hook-form'
 
 import { IProfileInput } from '../profile/profile.types'
 
-import { IAuthInput } from './auth.interface'
 import { Field } from '@/components/ui/form-elements/Field'
 import { validEmail } from '@/shared/regex'
 

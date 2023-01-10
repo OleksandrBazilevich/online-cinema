@@ -3,8 +3,7 @@ import NextNProgress from 'nextjs-progressbar'
 import { FC, PropsWithChildren } from 'react'
 
 import Favicons from './Favicons'
-import { accentColor, widths } from '@/config/constants'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { accentColor } from '@/config/constants'
 
 export const HeadProvider: FC<PropsWithChildren> = ({ children }) => {
   return (

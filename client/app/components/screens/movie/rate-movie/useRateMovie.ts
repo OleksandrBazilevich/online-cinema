@@ -1,6 +1,5 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
-import { toastr } from 'react-redux-toastr'
 
 import { useAuth } from '@/hooks/useAuth'
 import { RatingService } from '@/services/rating.service'

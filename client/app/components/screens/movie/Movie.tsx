@@ -1,19 +1,14 @@
-import { useQueryClient } from '@tanstack/react-query'
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 
 import { IMoviePage } from '../../../../pages/movie/[slug]'
 
 import { Comments } from './comments/Comments'
-import { useComments } from './comments/useComments'
 import { Content } from './content/Content'
 import { useUpdateCountOpened } from './useUpdateCountOpened'
 import { Banner } from '@/components/ui/banner/Banner'
 import { Gallery } from '@/components/ui/gallery/Gallery'
 import { SubHeading } from '@/components/ui/heading/SubHeading'
-import { AuthPlaceholder } from '@/components/ui/video-player/auth-placeholder/AuthPlaceholder'
-import { useAuth } from '@/hooks/useAuth'
 import { Meta } from '@/utils/meta/Meta'
 
 const DynamicVideoPlayer = dynamic(

@@ -2,24 +2,19 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
-import { ChangeEvent, FC, useState } from 'react'
+import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import styles from '../Comments.module.scss'
-import { useComments } from '../useComments'
 
 import { useCommentsItem } from './useCommentsItem'
-import avatar from '@/assets/images/avatar.png'
 import { MaterialIcon } from '@/components/ui/MaterialIcon'
-import { SkeletonLoader } from '@/components/ui/SkeletonLoader'
 import { Button } from '@/components/ui/form-elements/Button'
-import { Field } from '@/components/ui/form-elements/Field'
 import { TextArea } from '@/components/ui/form-elements/TextArea'
 import { widths } from '@/config/constants'
 import { useAuth } from '@/hooks/useAuth'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { IComment } from '@/shared/types/movie.types'
-import { convertMongoDate } from '@/utils/date/ConvertMongoDate'
 import { resizeTextArea } from '@/utils/resizeTextArea'
 
 interface ICommentItem {
@@ -52,7 +47,6 @@ export const CommentsItem: FC<ICommentItem> = ({
   const {
     register,
     handleSubmit,
-    getValues,
     formState: { errors },
     setValue,
   } = useForm<{
@@ -63,19 +57,19 @@ export const CommentsItem: FC<ICommentItem> = ({
   const matches = useMediaQuery(`(min-width: ${widths.mobileS}px)`)
   return (
     <div className={styles.comment}>
-      {data.isSpoiler && !showSpoiler && data.user._id != user?._id ? (
+      {data.isSpoiler && !showSpoiler && data.user?._id != user?._id ? (
         <div className={styles.spoiler}>
           <span>Be careful, this comment contains spoiler</span>
           <Button onClick={() => setShowSpoiler(true)}>Watch anyway</Button>
         </div>
       ) : (
         <>
-          {!data.isSpoiler || showSpoiler || data.user._id === user?._id ? (
+          {!data.isSpoiler || showSpoiler || data.user?._id === user?._id ? (
             <>
               {matches && (
                 <div className={styles.img}>
                   <Image
-                    src={data.user?.avatar || avatar}
+                    src={data.user?.avatar || ''}
                     layout="fill"
                     alt="avatar"
                     priority
@@ -85,7 +79,7 @@ export const CommentsItem: FC<ICommentItem> = ({
               )}
               <div className={styles.content}>
                 <div className={styles.header}>
-                  <span className={styles.name}>{data.user.username}</span>
+                  <span className={styles.name}>{data.user?.username}</span>
                   <DynamicDate data={data} />
                 </div>
                 <div className={styles.body}>
@@ -120,14 +114,17 @@ export const CommentsItem: FC<ICommentItem> = ({
               <div className="flex h-full">
                 <div className={styles.icons}>
                   {user ? (
-                    user?._id === data.user._id || user.isAdmin ? (
+                    user?._id === data.user?._id || user?.isAdmin ? (
                       showForm ? null : (
                         <>
-                          <button aria-label='edit comment' onClick={() => setShowForm(true)}>
+                          <button
+                            aria-label="edit comment"
+                            onClick={() => setShowForm(true)}
+                          >
                             <MaterialIcon name="MdEdit" />
                           </button>
                           <button
-                            aria-label='edit comment'
+                            aria-label="edit comment"
                             onClick={() => deleteComment(data._id)}
                             disabled={isLoading}
                           >

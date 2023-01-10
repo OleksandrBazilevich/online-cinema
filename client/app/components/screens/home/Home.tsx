@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import { IHome } from './home.interface'
-import { Gallery } from '@/components/ui/gallery/Gallery'
 import { GallerySlider } from '@/components/ui/gallery/GallerySlider'
 import { Heading } from '@/components/ui/heading/Heading'
 import { SubHeading } from '@/components/ui/heading/SubHeading'
@@ -12,7 +11,6 @@ import { Meta } from '@/utils/meta/Meta'
 
 export const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
   const isLaptop = useMediaQuery(`(max-width: ${widths.laptop}px)`)
-  const isTablet = useMediaQuery(`(max-width: ${widths.tablet}px)`)
   const isMobileL = useMediaQuery(`(max-width: ${widths.mobileL}px)`)
 
   return (

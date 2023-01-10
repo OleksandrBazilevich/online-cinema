@@ -1,13 +1,12 @@
-import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query'
+import { QueryClient, dehydrate } from '@tanstack/react-query'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-import { Catalog } from '@/components/screens/catalog-movies/Catalog'
 import { Movie } from '@/components/screens/movie/Movie'
 import { IGalleryItem } from '@/components/ui/gallery/gallery.interface'
 import { getMovieUrl } from '@/config/url.config'
 import { CommentService } from '@/services/comment.service'
 import { MovieService } from '@/services/movie.service'
-import { IComment, IMovie } from '@/shared/types/movie.types'
+import { IMovie } from '@/shared/types/movie.types'
 
 export interface IMoviePage {
   similarMovies: IGalleryItem[]

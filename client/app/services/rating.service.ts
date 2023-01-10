@@ -1,4 +1,4 @@
-import axios, { axiosClassic } from 'api/interceptors'
+import axios from 'api/interceptors'
 
 import { getRatingsUrl } from '@/config/api.config'
 

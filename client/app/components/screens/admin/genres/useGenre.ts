@@ -7,7 +7,6 @@ import { ITableItem } from '@/components/ui/admin-table/admin-table.types'
 import { getAdminUrl } from '@/config/url.config'
 import useDebounce from '@/hooks/useDebounce'
 import { GenreService } from '@/services/genre.service'
-import { convertMongoDate } from '@/utils/date/ConvertMongoDate'
 import { toastError } from '@/utils/toast-error'
 
 export const useGenre = () => {

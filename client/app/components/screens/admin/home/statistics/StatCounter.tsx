@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query'
 import cn from 'classnames'
 import { FC } from 'react'
 import CountUp from 'react-countup'

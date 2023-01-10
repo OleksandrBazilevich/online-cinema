@@ -33,7 +33,6 @@ export class MovieController {
     return this.movieService.getByActor(actorId)
   }
 
-  // create Dto
   @UsePipes(new ValidationPipe())
   @Post('get-by-genres')
   @HttpCode(200)

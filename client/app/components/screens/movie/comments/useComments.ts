@@ -3,7 +3,7 @@ import {
   useMutation,
   useQueryClient,
 } from '@tanstack/react-query'
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import { toastr } from 'react-redux-toastr'
 
 import { CommentService } from '@/services/comment.service'

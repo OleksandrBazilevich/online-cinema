@@ -6,7 +6,6 @@ import { toastr } from 'react-redux-toastr'
 import { IUserEditInput } from './user-edit.types'
 import { getAdminUrl } from '@/config/url.config'
 import { UserService } from '@/services/user.service'
-import { getKeys } from '@/utils/object/getKeys'
 import { toastError } from '@/utils/toast-error'
 
 export const useUserEdit = (setValue: UseFormSetValue<IUserEditInput>) => {

@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { Catalog } from '@/components/screens/catalog-movies/Catalog'
 import { ActorService } from '@/services/actor.service'
 import { MovieService } from '@/services/movie.service'
-import { IActor, IGenre, IMovie } from '@/shared/types/movie.types'
+import { IActor, IMovie } from '@/shared/types/movie.types'
 
 interface IActorPage {
   movies: IMovie[]
@@ -11,7 +11,7 @@ interface IActorPage {
 }
 
 const ActorPage: NextPage<IActorPage> = ({ movies, actor }) => {
-  return <Catalog movies={movies || []} title={actor.name} />
+  return <Catalog movies={movies || []} title={actor.name || ''} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

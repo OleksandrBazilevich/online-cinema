@@ -1,6 +1,5 @@
 import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { toastr } from 'react-redux-toastr'
 
 import styles from './Auth.module.scss'
 import { AuthFields } from './AuthFields'

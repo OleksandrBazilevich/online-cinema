@@ -1,13 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 import { useMemo } from 'react'
 
-import { IDataStatWithImage } from './StatWithImage'
 import { getActorUrl, getGenreUrl, getMovieUrl } from '@/config/url.config'
 import { ActorService } from '@/services/actor.service'
 import { AdminService } from '@/services/admin.service'
 import { GenreService } from '@/services/genre.service'
 import { MovieService } from '@/services/movie.service'
-import { IMovie } from '@/shared/types/movie.types'
 
 export const useStatistics = () => {
   const { isLoading: isTotalViewsCountLoading, data: totalViews } = useQuery(

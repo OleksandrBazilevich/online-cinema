@@ -11,9 +11,8 @@ import { FileModule } from './file/file.module'
 import { ActorModule } from './actor/actor.module'
 import { MovieModule } from './movie/movie.module'
 import { RatingModule } from './rating/rating.module'
-import { TelegramModule } from './telegram/telegram.module'
 import { ViewsModule } from './views/views.module'
-import { CommentModule } from './comment/comment.module';
+import { CommentModule } from './comment/comment.module'
 
 @Module({
   imports: [
@@ -30,7 +29,6 @@ import { CommentModule } from './comment/comment.module';
     ActorModule,
     MovieModule,
     RatingModule,
-    TelegramModule,
     ViewsModule,
     CommentModule,
   ],

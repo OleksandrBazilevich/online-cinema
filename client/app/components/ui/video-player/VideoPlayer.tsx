@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { FC, useEffect, useRef } from 'react'
 import videojs from 'video.js'
 import 'video.js/dist/video-js.css'
@@ -9,7 +8,6 @@ import { useAuth } from '@/hooks/useAuth'
 
 export const VideoPlayer: FC<IVideoPlayer> = ({ videoSource, slug }) => {
   const { user } = useAuth()
-  const { pathname } = useRouter()
 
   const videoRef = useRef(null)
   const playerRef = useRef(null)
@@ -31,7 +29,7 @@ export const VideoPlayer: FC<IVideoPlayer> = ({ videoSource, slug }) => {
 
       if (!videoElement) return
 
-      const player = (playerRef.current = videojs(videoElement, options))
+      playerRef.current = videojs(videoElement, options)
     } else {
     }
   }, [options, videoRef])

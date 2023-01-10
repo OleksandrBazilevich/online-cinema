@@ -50,7 +50,7 @@ export const Profile: FC = () => {
           }}
         />
         <div className={styles.btn_container}>
-          <Button>Update</Button>
+          <Button disabled={isLoading}>Update</Button>
         </div>
       </form>
     </Meta>

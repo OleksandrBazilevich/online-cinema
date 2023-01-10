@@ -14,7 +14,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { Meta } from '@/utils/meta/Meta'
 
 export const UserEdit: FC = () => {
-  const { handleSubmit, register, formState, setValue, getValues, control } =
+  const { handleSubmit, register, formState, setValue, control } =
     useForm<IUserEditInput>({
       mode: 'onChange',
     })

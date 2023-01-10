@@ -1,17 +1,12 @@
-import { useQuery } from '@tanstack/react-query'
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
-import { FC, Fragment, useState } from 'react'
+import { FC } from 'react'
 import InfiniteScroll from 'react-infinite-scroller'
 
-import { CommentForm } from './comment-form/CommentForm'
-import { CommentsItem } from './comments-item/CommentstItem'
+import { CommentsItem } from './comments-item/CommentsItem'
 import { useComments } from './useComments'
 import { SkeletonLoader } from '@/components/ui/SkeletonLoader'
 import { SubHeading } from '@/components/ui/heading/SubHeading'
 import { useAuth } from '@/hooks/useAuth'
-import { CommentService } from '@/services/comment.service'
-import { IComment } from '@/shared/types/movie.types'
 
 export const Comments: FC<{ movieId: string }> = ({ movieId }) => {
   const { user } = useAuth()

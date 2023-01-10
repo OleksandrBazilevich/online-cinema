@@ -1,6 +1,5 @@
-import dynamic from 'next/dynamic'
-import { ComponentType, FC } from 'react'
-import { Controller, useForm } from 'react-hook-form'
+import { FC } from 'react'
+import { useForm } from 'react-hook-form'
 
 import styles from '../Comments.module.scss'
 import { ICommentData } from '../comments.interface'
@@ -8,7 +7,6 @@ import { ICommentData } from '../comments.interface'
 import { useCommentForm } from './useCommentForm'
 import { Button } from '@/components/ui/form-elements/Button'
 import { TextArea } from '@/components/ui/form-elements/TextArea'
-import { ITextArea } from '@/components/ui/form-elements/form.types'
 import { resizeTextArea } from '@/utils/resizeTextArea'
 
 export const CommentForm: FC<{ movieId: string }> = ({ movieId }) => {

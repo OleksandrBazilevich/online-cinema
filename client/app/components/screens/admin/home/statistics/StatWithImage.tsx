@@ -1,19 +1,13 @@
-import { useQuery } from '@tanstack/react-query'
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, ReactElement } from 'react'
+import { FC } from 'react'
 
 import styles from '../Admin.module.scss'
 
 import { MaterialIcon } from '@/components/ui/MaterialIcon'
 import { SkeletonLoader } from '@/components/ui/SkeletonLoader'
-import { SubHeading } from '@/components/ui/heading/SubHeading'
-import { getMovieUrl } from '@/config/url.config'
-import { useAuth } from '@/hooks/useAuth'
-import { MovieService } from '@/services/movie.service'
 import { TypeMaterialIconName } from '@/shared/types/icon.types'
-import { IMovie } from '@/shared/types/movie.types'
 
 export interface IDataStatWithImage {
   link: string

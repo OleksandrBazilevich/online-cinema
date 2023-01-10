@@ -2,7 +2,6 @@ import {
   BarElement,
   CategoryScale,
   Chart as ChartJS,
-  Legend,
   LinearScale,
   SubTitle,
   Title,
@@ -10,10 +9,11 @@ import {
 } from 'chart.js'
 import dayjs from 'dayjs'
 import localeData from 'dayjs/plugin/localeData'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { Bar } from 'react-chartjs-2'
 
 import styles from './BarChart.module.scss'
+import { formateData } from './formatting.data'
 import { SkeletonLoader } from '@/components/ui/SkeletonLoader'
 import { IViews } from '@/shared/types/movie.types'
 
@@ -80,7 +80,7 @@ export const options = {
       padding: {
         bottom: 10,
       },
-      text: 'Total views ',
+      text: 'Total views by current year',
     },
     subtitle: {
       font: {
@@ -103,8 +103,9 @@ interface IBarChart {
 }
 
 export const BarChart: FC<IBarChart> = ({ data, isLoading }) => {
-  data
-    ? (options.plugins.subtitle.text = `${data
+  const preparedData = formateData(data)
+  preparedData
+    ? (options.plugins.subtitle.text = `${preparedData
         .map((item) => item.views)
         .reduce((a, b) => a + b)
         .toLocaleString()}`)
@@ -117,10 +118,12 @@ export const BarChart: FC<IBarChart> = ({ data, isLoading }) => {
         <Bar
           options={options}
           data={{
-            labels: data.map((item) => dayjs.monthsShort()[item.month - 1]),
+            labels: preparedData?.map(
+              (item) => dayjs.monthsShort()[item.month - 1]
+            ),
             datasets: [
               {
-                data: data.map((item) => item.views),
+                data: preparedData?.map((item) => item.views),
               },
             ],
           }}

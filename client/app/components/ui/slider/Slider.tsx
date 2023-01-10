@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react'
+import { FC } from 'react'
 import { Autoplay } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'

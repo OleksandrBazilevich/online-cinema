@@ -12,7 +12,6 @@ import { getGenresListEach } from '@/utils/movie/getGenresListEach'
 
 export const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
   const matches = useMediaQuery(`(min-width: ${widths.laptopL}px)`)
-
   return (
     <div className={styles.item}>
       {matches ? (

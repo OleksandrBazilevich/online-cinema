@@ -1,10 +1,4 @@
-import {
-  IsArray,
-  IsBoolean,
-  IsNumber,
-  IsObject,
-  IsString,
-} from 'class-validator'
+import { IsArray, IsNumber, IsObject, IsString } from 'class-validator'
 
 export class Parameters {
   @IsNumber()
@@ -43,6 +37,4 @@ export class CreateMovieDto {
   @IsArray()
   @IsString({ each: true })
   actors: string[]
-
-  isSendTelegram?: boolean
 }
